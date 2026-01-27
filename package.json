@@ -1,0 +1,19 @@
+{
+  "name": "bun-hono-vite-react",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:server": "cd server && bun run dev",
+    "dev:client": "cd client && bun run dev",
+    "build:server": "cd server && bun run build",
+    "build:client": "cd client && bun run build",
+    "serve:server": "cd server && bun run serve",
+    "start:client": "cd client && bun run preview"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

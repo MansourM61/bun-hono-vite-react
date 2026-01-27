@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import { type ApiType } from "../../server/src/apis/api";
+import { hc, type InferResponseType } from "hono/client";
 import "./App.css";
 
-interface Data {
-  id: number;
-  data: string;
-}
+const client = hc<ApiType>("/api/");
+type Data = InferResponseType<typeof client.index.$get>;
 
 function App() {
   const [data, setData] = useState<Data | null>(null);
@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const rawData = await fetch("/api");
+      const rawData = await client.index.$get();
       const jsonData = await rawData.json();
 
       setData(jsonData);

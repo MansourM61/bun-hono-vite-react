@@ -5,6 +5,8 @@ import { serveStatic } from 'hono/bun';
 
 const app = new Hono()
 
+// If in `production`, use client built folder to serve the static files,
+// This way, the landing page will directly summon the client.
 if (process.env.MODE_ENV === "production") {
     app.use("/*", serveStatic({ root: "../client/dist" }))
     app.get('/about', (c) => {
@@ -17,7 +19,7 @@ else {
     })
 }
 
-
+// Add the routes, APIs, etc to the server
 app.route("/extra", extra.default);
 app.route("/api", api.default);
 

@@ -9,6 +9,8 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
+        // apply proxy so the requests for `/api` are automatically
+        // redirected to `http://localhost:8080`
         proxy: {
             '/api': {
                 target: 'http://localhost:8080',

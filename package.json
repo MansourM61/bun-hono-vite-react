@@ -10,7 +10,8 @@
     "build:client": "cd client && bun run build",
     "build": "bun run build:server && bun run build:client",
     "serve:server": "cd server && bun run serve",
-    "start:client": "cd client && bun run preview"
+    "serve:client": "cd client && bun run preview",
+    "serve": "cd server && bun run ./dist/index.js"
   },
   "devDependencies": {
     "@types/bun": "latest",

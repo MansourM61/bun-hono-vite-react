@@ -15,11 +15,12 @@
     "serve": "cd server && cross-env MODE_ENV=production bun run ./dist/index.js",
     "clean:server": "rimraf ./server/dist",
     "clean:client": "rimraf ./client/dist",
-    "clean:dist": "npx rimraf ./server/node_modules && npx rimraf ./client/node_modules && npx rimraf ./node_modules\"",
-    "clean": "concurrently \"bun run clean:client\" \"npm run clean:server\""
+    "clean": "concurrently \"bun run clean:client\" \"npm run clean:server\"",
+    "cleanup": "bun run ./utils/cleanup.mts"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/node": "^25.0.10",
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "rimraf": "^6.1.2"

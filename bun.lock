@@ -6,6 +6,7 @@
       "name": "bun-hono-vite-react",
       "devDependencies": {
         "@types/bun": "latest",
+        "@types/node": "^25.0.10",
         "concurrently": "^9.2.1",
         "cross-env": "^10.1.0",
         "rimraf": "^6.1.2",

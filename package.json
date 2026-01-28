@@ -3,19 +3,27 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "inst:all": "bun install && cd server && bun install && cd ../client && bun install",
     "dev:server": "cd server && bun run dev",
     "dev:client": "cd client && bun run dev",
     "dev": "concurrently \"bun run dev:server\" \"bun run dev:client\"",
-    "build:server": "cd server && bun run build",
-    "build:client": "cd client && bun run build",
+    "build:server": "cd server && cross-env MODE_ENV=production bun run build",
+    "build:client": "cd client && cross-env MODE_ENV=production bun run build",
     "build": "bun run build:server && bun run build:client",
     "serve:server": "cd server && bun run serve",
     "serve:client": "cd client && bun run preview",
-    "serve": "cd server && bun run ./dist/index.js"
+    "serve": "cd server && cross-env MODE_ENV=production bun run ./dist/index.js",
+    "clean:server": "rimraf ./server/dist",
+    "clean:client": "rimraf ./client/dist",
+    "clean": "concurrently \"bun run clean:client\" \"npm run clean:server\"",
+    "cleanup": "bun run ./utils/cleanup.mts"
   },
   "devDependencies": {
     "@types/bun": "latest",
-    "concurrently": "^9.2.1"
+    "@types/node": "^25.0.10",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "rimraf": "^6.1.2"
   },
   "peerDependencies": {
     "typescript": "^5"

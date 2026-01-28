@@ -8,7 +8,12 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "serve": "vite preview",
-    "mock:server": "json-server -p 8080 ./mocks/api.data.json"
+    "test:unit": "vitest",
+    "test:cov": "vitest run --coverage",
+    "test:e2e": "npx playwright test",
+    "mock:server": "json-server -p 8080 ./mocks/api.data.json",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -19,17 +24,31 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.58.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.2.2",
+    "@vitest/coverage-v8": "^4.0.18",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "json-server": "^1.0.0-beta.5",
+    "msw": "^2.12.7",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vitest": "^4.0.18",
+    "storybook": "^10.2.1",
+    "@storybook/react-vite": "^10.2.1",
+    "@chromatic-com/storybook": "^5.0.0",
+    "@storybook/addon-vitest": "^10.2.1",
+    "@storybook/addon-a11y": "^10.2.1",
+    "@storybook/addon-docs": "^10.2.1",
+    "@storybook/addon-onboarding": "^10.2.1",
+    "eslint-plugin-storybook": "^10.2.1",
+    "playwright": "^1.58.0",
+    "@vitest/browser-playwright": "^4.0.18"
   }
 }

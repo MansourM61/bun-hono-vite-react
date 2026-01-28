@@ -1,4 +1,10 @@
 {
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "tsconfig.json": "tsconfig.*.json, env.d.ts",
+        "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+        "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig"
+    },
     "workbench.colorCustomizations": {
         "editorBracketHighlight.foreground1": "#fac928",
         "editorBracketHighlight.foreground2": "#c122e9",
@@ -18,5 +24,17 @@
         "editorBracketPairGuide.activeBackground4": "#00E7499E",
         "editorBracketPairGuide.activeBackground5": "#F513849E",
         "editorBracketPairGuide.activeBackground6": "#19F9D89E"
+    },
+    "tailwindCSS.includeLanguages": {
+        "html": "html",
+        "javascript": "javascript",
+        "css": "css",
+        "vue": "html"
+    },
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "files.associations": {
+        "*.css": "tailwindcss"
     }
 }

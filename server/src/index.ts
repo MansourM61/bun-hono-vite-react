@@ -19,11 +19,14 @@ else {
     })
 }
 
+// extract the port number from the ENV
+const port = Number(process.env.PORT ?? "8080")
+
 // Add the routes, APIs, etc to the server
 app.route("/extra", extra.default);
 app.route("/api", api.default);
 
 export default {
-    port: 8080,
+    port: port,
     fetch: app.fetch
 }

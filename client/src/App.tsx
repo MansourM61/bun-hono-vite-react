@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const rawData = await client.index.$get(); // equivalent to `fetch("http://localhost:3000/api")`
+      const rawData = await client.index.$get(); // equivalent to `fetch("http://localhost:port/api")`
       const jsonData = await rawData.json();
 
       setData(jsonData);

@@ -11,7 +11,7 @@
     "test:unit": "vitest",
     "test:cov": "vitest run --coverage",
     "test:e2e": "npx playwright test",
-    "mock:server": "json-server -p 3000 ./mocks/api.data.json",
+    "mock:server": "json-server -p 8080 ./mocks/api.data.json",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

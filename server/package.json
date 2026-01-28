@@ -1,18 +1,18 @@
 {
-  "name": "server",
-  "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "build": "bun build --minify ./src/index.ts --outdir ./dist --target bun",
-    "serve": "bun run dist/index.js",
-    "test:unit": "vitest",
-    "test:cov": "vitest run --coverage"
-  },
-  "dependencies": {
-    "hono": "^4.11.7"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@vitest/coverage-v8": "^4.0.18",
-    "vitest": "^4.0.18"
-  }
+    "name": "server",
+    "scripts": {
+        "dev": "bun run --hot src/index.ts",
+        "build": "bun build --minify ./src/index.ts --outdir ./dist --target bun",
+        "serve": "bun run dist/index.js",
+        "test:unit": "vitest",
+        "test:cov": "vitest run --coverage"
+    },
+    "dependencies": {
+        "hono": "^4.11.7"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@vitest/coverage-v8": "^4.0.18",
+        "vitest": "^4.0.18"
+    }
 }

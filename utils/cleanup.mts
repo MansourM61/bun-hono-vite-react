@@ -46,6 +46,7 @@ main: (function () {
     deleteFolderRecursive('./client/playwright-report')
     deleteFolderRecursive('./client/test-results')
     deleteFolderRecursive('./client/dist')
+    deleteFolderRecursive('./client/storybook-static')
     deleteFolderRecursive('./server/node_modules')
     deleteFolderRecursive('./server/dist')
     deleteFolderRecursive('./node_modules')
